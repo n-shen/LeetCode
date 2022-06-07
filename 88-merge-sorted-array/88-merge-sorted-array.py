@@ -3,12 +3,8 @@ class Solution:
         """
         Do not return anything, modify nums1 in-place instead.
         """
-        i = 0
-        nums1.reverse()
-        for i in range(0, len(nums1)):
-            if i < len(nums2):
-                nums1[i] = nums2[i]
-            i += 1
+        for i in range(n):
+            nums1[m + i] = nums2[i]
         
         nums1.sort()
         
