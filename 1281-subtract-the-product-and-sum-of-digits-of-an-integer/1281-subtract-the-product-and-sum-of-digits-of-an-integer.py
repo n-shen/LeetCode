@@ -3,7 +3,7 @@ class Solution:
         digit_product = 1
         digit_sum = 0
         
-        while n > 0:
+        while n:
             digit = n%10
             digit_product *= digit
             digit_sum += digit
