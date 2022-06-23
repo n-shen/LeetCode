@@ -5,15 +5,15 @@ class Solution:
         if num == 1:
             return True
         
-        while right - left > 1:
+        while left <= right:
             pivot = (left + right)//2
             
             if pivot * pivot == num:
                 return True
             
             if pivot * pivot < num:
-                left = pivot
+                left = pivot + 1
             else:
-                right = pivot
+                right = pivot - 1
         
         return False
