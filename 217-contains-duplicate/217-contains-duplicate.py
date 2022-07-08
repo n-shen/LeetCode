@@ -5,5 +5,6 @@ class Solution:
             if e in checked:
                 return True
             checked[e] = 1
+        # print(checked)
         return False
             
