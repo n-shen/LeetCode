@@ -1,6 +1,6 @@
 class Solution:
     def findMaxConsecutiveOnes(self, nums: List[int]) -> int:
-        maxNum, curNum = 0, 0
+        maxNum = curNum = 0
         
         for e in nums:
             if e == 1:
