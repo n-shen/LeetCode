@@ -9,9 +9,9 @@ class Solution:
         curr = head
         
         while curr:
-            next_temp = curr.next
+            next_tmp = curr.next
             curr.next = prev
             prev = curr
-            curr = next_temp
-            
+            curr = next_tmp
+        
         return prev
