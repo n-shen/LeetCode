@@ -1,13 +1,14 @@
 class Solution:
     def isValid(self, s: str) -> bool:
         left_par = ['(', '[', '{']
+        right_par = [')', ']', '}']
         strStack = []
         for e in s:
             if e in left_par:
                 strStack.append(e)
-            elif len(strStack) > 0:
+            elif strStack:
                 top = strStack.pop()
-                if (top == '(' and e != ')') or (top == '[' and e != ']') or (top == '{' and e != '}'):
+                if e != right_par[left_par.index(top)]:
                     return False
             else:
                 return False
