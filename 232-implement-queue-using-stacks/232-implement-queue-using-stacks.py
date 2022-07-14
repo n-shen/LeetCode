@@ -9,28 +9,27 @@ class MyQueue:
         self.stk1.append(x)
 
     def pop(self) -> int:
-        while self.stk1 != []:
+        if self.stk2:
+            return self.stk2.pop()
+        while self.stk1:
             self.stk2.append(self.stk1.pop())
-        last = self.stk2.pop()
-        
-        while self.stk2 != []:
-            self.stk1.append(self.stk2.pop())
-
-        return last        
+        return self.stk2.pop()
+     
 
     def peek(self) -> int:
-        while self.stk1 != []:
+        if self.stk2:
+            last = self.stk2.pop()
+            self.stk2.append(last)
+            return last
+        while self.stk1:
             self.stk2.append(self.stk1.pop())
+            
         last = self.stk2.pop()
-        self.stk1.append(last)
-        
-        while self.stk2 != []:
-            self.stk1.append(self.stk2.pop())
-
+        self.stk2.append(last)
         return last
     
     def empty(self) -> bool:
-        return self.stk1 == []
+        return self.stk1 == [] and self.stk2 == []
 
 
 # Your MyQueue object will be instantiated and called as such:
