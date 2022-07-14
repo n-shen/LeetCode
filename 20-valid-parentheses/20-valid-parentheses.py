@@ -1,8 +1,9 @@
 class Solution:
     def isValid(self, s: str) -> bool:
+        left_par = ['(', '[', '{']
         strStack = []
         for e in s:
-            if e == '(' or e == '{' or e == '[':
+            if e in left_par:
                 strStack.append(e)
             elif len(strStack) > 0:
                 top = strStack.pop()
@@ -11,4 +12,4 @@ class Solution:
             else:
                 return False
                 
-        return len(strStack) == 0
+        return strStack == []
