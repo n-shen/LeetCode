@@ -1,10 +1,11 @@
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        checked = {}
+        hm = {}
+        
         for e in nums:
-            if e in checked:
+            if e in hm:
                 return True
-            checked[e] = 1
-        # print(checked)
+            else:
+                hm[e] = 1
+        
         return False
-            
