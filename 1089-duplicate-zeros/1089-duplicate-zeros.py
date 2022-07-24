@@ -16,16 +16,15 @@ class Solution:
                 ptr2 -= 1
             ptr1 += 1
         
-        print(ptr1, ptr2, arr)
+        # print(ptr1, ptr2, arr)
         
         if endZero:
             ptr2 = lg - 2
         else:
             ptr2 = lg - 1
         ptr1 -= 1 
-        print(ptr1, ptr2, arr)
-        
-        
+        # print(ptr1, ptr2, arr)
+             
         while ptr1 != ptr2:
             if arr[ptr1] != 0:
                 arr[ptr2] = arr[ptr1]
@@ -34,6 +33,6 @@ class Solution:
                 ptr2 -= 1
             ptr1 -= 1
             ptr2 -= 1
-        print(ptr1, ptr2, arr)
+        # print(ptr1, ptr2, arr)
                 
         
