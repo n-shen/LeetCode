@@ -1,9 +1,11 @@
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        curSum = maxSum = nums[0]
+        curr_max = curr_sum = nums[0]
         
-        for e in nums[1:]:
-            curSum = max(e, curSum + e)
-            maxSum = max(maxSum, curSum)
+        for i in range(1, len(nums)):
+            curr_sum += nums[i]
+            curr_sum = max(curr_sum, nums[i])
+            curr_max = max(curr_max, curr_sum)
         
-        return maxSum
+        return curr_max    
+        
