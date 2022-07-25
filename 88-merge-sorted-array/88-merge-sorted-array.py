@@ -3,14 +3,15 @@ class Solution:
         """
         Do not return anything, modify nums1 in-place instead.
         """
-        p1, p2 = m - 1, n - 1
-        
-        for p in range(n + m - 1, -1, -1):
-            if p2 < 0:
-                break
-            if p1 >= 0 and nums1[p1] > nums2[p2]:
-                nums1[p] = nums1[p1]
-                p1 -= 1
+        ptr1, ptr2 = m - 1, n - 1
+        ptr3 = m + n - 1
+
+        while ptr2 >= 0:
+            if ptr1 < 0 or nums2[ptr2] > nums1[ptr1]:
+                nums1[ptr3] = nums2[ptr2]
+                ptr2 -= 1
             else:
-                nums1[p] = nums2[p2]
-                p2 -= 1
+                nums1[ptr3] = nums1[ptr1]
+                ptr1 -= 1
+            ptr3 -= 1
+            
