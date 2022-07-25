@@ -3,14 +3,14 @@ class Solution:
         sl = list(s)
         hm = {}
         
-        for i in range(len(sl)):
-            if sl[i] in hm:
-                hm[sl[i]][0] += 1
+        for e in sl:
+            if e in hm:
+                hm[e] += 1
             else:
-                hm[sl[i]] = [1, i]
+                hm[e] = 1
         
         for e in hm:
-            if hm.get(e)[0] == 1:
-                return hm.get(e)[1]
+            if hm[e] == 1:
+                return s.index(e)
         return -1
     
